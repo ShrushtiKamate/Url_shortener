@@ -3,7 +3,6 @@ import { generatenanoid } from "../utils/helper.js";
 import { saveShorturl } from "../doa/shorturl.service.js";
 export const createShortUrlWithoutUser = async (url)=>{
     const shortUrl = await generatenanoid(7);
-    if(!shortUrl) throw new Error("Short url not generated")
     await saveShorturl(shortUrl,url); 
      return shortUrl;
 };
